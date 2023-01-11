@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Table</title>
+    </head>
+
+    <h2>Table Colour for Even Number</h2>
+    <table
+        border="solid 3px;"
+        style="
+            background-color: white;
+            padding: 5px 5px;
+            font-size: 40px;
+            text-align: center;
+        "
+    >
+        <script>
+            var flow = 0;
+            var j;
+            for (j = 1; j <= 5; j++) {
+                document.write("<tr>");
+
+                for (var i = 1; i <= 5; i++) {
+                    flow += 1;
+                    flow = parseInt(flow);
+
+                    if (flow % 2) {
+                        document.write("<td> " + flow + "</td>");
+                    } else {
+                        document.write(
+                            "<td style='background-color:yellow'>" +
+                                flow +
+                                "</td>"
+                        );
+                    }
+                }
+                document.write(+"</tr>");
+            }
+        </script>
+    </table>
+</html>

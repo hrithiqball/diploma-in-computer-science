@@ -1,0 +1,91 @@
+<html lang="en">
+    <head>
+        <style>
+            tr,
+            td,
+            th {
+                border: 1px solid black;
+            }
+            .calc,
+            tr,
+            td,
+            th {
+                border: 1px solid black;
+            }
+        </style>
+        <script>
+            window.onload = () => {
+                let button = document.querySelector("#btn");
+
+                // Function for calculating BMI
+                button.addEventListener("click", calculateWage);
+            };
+            function calculateWage() {
+                let totalHours = parseInt(
+                    document.querySelector("#hourWorked").value
+                );
+                let job = document.getElementById("job").value;
+                let wageInput = document.getElementById("tw");
+                let hourlyWage = 0.0;
+                let totalwage = 0.0;
+                if (job == "actor") hourlyWage = 50.01;
+                else if (job == "partTime") hourlyWage = 24.84;
+                else hourlyWage = 24.51;
+
+                totalwage = totalHours * hourlyWage;
+                wageInput.value = totalwage.toFixed(2);
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Job title</th>
+                <th>Hourly wage</th>
+            </tr>
+            <tr>
+                <td>actor</td>
+                <td>$50.01</td>
+            </tr>
+            <tr>
+                <td>Part Time actor</td>
+                <td>$24.84</td>
+            </tr>
+            <tr>
+                <td>Commerical extra</td>
+                <td>$24.51</td>
+            </tr>
+        </table>
+        <br />
+        <table class="calc">
+            <tr>
+                <th>Total Hours Worked(per Week)</th>
+                <th>Job Title</th>
+                <th>Total Hourly Wages(per Week)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input
+                        type="text"
+                        name="totalHours"
+                        id="hourWorked"
+                        style="margin: 0"
+                    />
+                </td>
+                <td>
+                    <select name="jobs" id="job">
+                        <option value="actor">actor</option>
+                        <option value="partTime">Part Time actor</option>
+                        <option value="commercial">Commerical extra</option>
+                    </select>
+                </td>
+                <td>USD <input type="text" name="totalWage" id="tw" /></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center">
+                    <button id="btn">calcualte</button>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1>Converts RM to USD and otherwise (USD1=MYR4)</h1>
+
+        <input type="text" id="rm" placeholder="RM" /> =
+        <input type="text" id="usd" placeholder="USD" /><br />
+        <input type="submit" onclick="convert()" /><input
+            type="reset"
+            onclick="reset()"
+        />
+
+        <script>
+            function reset() {
+                //no form, therefore reset does not work, hence this function
+                document.getElementById("rm").value = "";
+                document.getElementById("usd").value = "";
+            }
+
+            function convert() {
+                var rm = parseInt(document.getElementById("rm").value);
+                var usd = parseInt(document.getElementById("usd").value);
+
+                if (isNaN(rm))
+                    document.getElementById("rm").value = "RM" + usd * 4;
+
+                if (isNaN(usd))
+                    document.getElementById("usd").value = "USD " + rm / 4;
+            }
+        </script>
+    </body>
+</html>

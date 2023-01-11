@@ -1,0 +1,26 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <body>
+        <h1>Converts RM to USD and otherwise (USD1=MYR4)</h1>
+
+        <input type="text" id="rm" placeholder="RM" /> =
+        <input type="text" id="usd" placeholder="USD" /><br />
+        <input type="submit" id="s" /><input type="reset" id="r" />
+        <script>
+            $(document).ready(function () {
+                $("#r").click(function () {
+                    $("#rm").val("");
+                    $("#usd").val("");
+                });
+
+                $("#s").click(function () {
+                    var rm = parseInt($("#rm").val());
+                    var usd = parseInt($("#usd").val());
+
+                    if (isNaN(rm)) $("#rm").val("RM " + usd * 4);
+                    if (isNaN(usd)) $("#usd").val("USD " + rm / 4);
+                });
+            });
+        </script>
+    </body>
+</html>

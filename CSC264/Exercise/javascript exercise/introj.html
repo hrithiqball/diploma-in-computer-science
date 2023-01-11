@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BMI Calculator</title>
+    </head>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    >
+        $(document).ready(function(){
+        $("input[type='radio']").click(function(){
+            var h=parseFloat ($("#h").val());
+            var w=parseFloat ($("#w").val());
+            var bmi=w/(h*h);
+
+            if ($("bmi").is(':checked')) {
+                $("#r").text("BMI :"+bmi.toFixed(2));
+            }
+        });
+        });
+    </script>
+    <body>
+        Height (m): <input type="text" id="h" /> <br />
+        Weight(kg): <input type="text" id="w" /> <br />
+        <input type="radio" value="bmi" name="op" id="bmi" /> BMI
+        <input type="radio" value="status" name="op" id="status" /> Status
+        <br />
+
+        <p id="r"></p>
+    </body>
+</html>
