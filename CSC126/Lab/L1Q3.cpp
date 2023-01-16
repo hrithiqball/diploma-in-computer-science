@@ -9,14 +9,14 @@ int main()
 {
 	int curYear, userAge;
 	int retireYear;
-	const int RETIREAGE = 60;
+	const int retireAge = 60;
 
 	cout << "Please enter the current year" << endl;
 	cin >> curYear;
 	cout << "Please enter your age" << endl;
 	cin >> userAge;
 
-	retireYear = RETIREAGE - userAge + curYear;
+	retireYear = retireAge - userAge + curYear;
 
 	cout << "Your retirement year is " << retireYear;
 }

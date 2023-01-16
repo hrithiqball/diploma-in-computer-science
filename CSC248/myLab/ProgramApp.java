@@ -1,6 +1,6 @@
 
 /*
-Matric :    2020450636
+Matrix :    2020450636
 Name :      MUHAMMAD HARITH IQBAL BIN MOHD HANIZUN
 Group :     KCS1103D
 Lecturer :  DR TANIZA BINTI TAJUDDIN
